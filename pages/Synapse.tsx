@@ -177,8 +177,8 @@ export const Synapse: React.FC = () => {
             </p>
             
             <ul className="mt-6 space-y-2 font-mono text-sm text-gray-400">
-                <li className="flex items-center gap-2"><span className="text-cyber-red">></span> Alias: Flesh-Mechanic</li>
-                <li className="flex items-center gap-2"><span className="text-cyber-red">></span> Alias: Chip-Surgeon</li>
+                <li className="flex items-center gap-2"><span className="text-cyber-red">{'>'}</span> Alias: Flesh-Mechanic</li>
+                <li className="flex items-center gap-2"><span className="text-cyber-red">{'>'}</span> Alias: Chip-Surgeon</li>
             </ul>
          </div>
       </div>
