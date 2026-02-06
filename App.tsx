@@ -5,8 +5,10 @@ import { Home } from './pages/Home';
 import { Database } from './pages/Database';
 import { Associations } from './pages/Associations';
 import { Corporations } from './pages/Corporations';
+import { Factions } from './pages/Factions';
 import { Ranks } from './pages/Ranks';
 import { Synapse } from './pages/Synapse';
+import { Amygdala } from './pages/Amygdala';
 import { IntroScreen } from './components/IntroScreen';
 
 // Scanline Effect Component
@@ -33,9 +35,11 @@ const AppContent = () => {
           <Route path="/" element={<Home />} />
           <Route path="/database" element={<Database />} />
           <Route path="/ranks" element={<Ranks />} />
+          <Route path="/factions" element={<Factions />} />
           <Route path="/associations" element={<Associations />} />
           <Route path="/corporations" element={<Corporations />} />
           <Route path="/synapse" element={<Synapse />} />
+          <Route path="/amygdala" element={<Amygdala />} />
         </Routes>
       </main>
       

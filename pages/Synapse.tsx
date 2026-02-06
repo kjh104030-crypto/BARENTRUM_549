@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { AlertOctagon, Skull, Activity, Syringe, Wifi } from 'lucide-react';
+import { AlertOctagon, Skull, Activity, Wifi } from 'lucide-react';
 
 // Data pools for simulation
 const usernames = [
@@ -44,12 +44,12 @@ export const Synapse: React.FC = () => {
   ]);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Auto-scroll to bottom of chat
+  // Auto-scroll to bottom only on initial access
   useEffect(() => {
-    if (messagesEndRef.current) {
+    if (messagesEndRef.current && accessGranted) {
       messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [messages, accessGranted]);
+  }, [accessGranted]);
 
   // Live chat simulation
   useEffect(() => {
@@ -131,17 +131,22 @@ export const Synapse: React.FC = () => {
   // Content Screen
   return (
     <div className="min-h-screen pt-24 px-4 sm:px-6 lg:px-8 max-w-6xl mx-auto pb-20">
-      <div className="flex items-center justify-between mb-12 border-b border-cyber-red pb-4">
-        <div className="flex items-center gap-4">
-            <div className="w-3 h-3 bg-cyber-red rounded-full animate-ping"></div>
-            <h2 className="text-4xl font-display font-bold text-cyber-red tracking-tighter">SYNAPSE_NET</h2>
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-cyber-red pb-4 gap-4">
+        <div>
+            <div className="flex items-center gap-4">
+                <div className="w-3 h-3 bg-cyber-red rounded-full animate-ping"></div>
+                <h2 className="text-4xl font-display font-bold text-cyber-red tracking-tighter">SYNAPSE_NET</h2>
+            </div>
+             <p className="font-mono text-gray-400 text-sm mt-2 md:ml-7 leading-relaxed italic">
+                "여기가 바런트럼의 다크웹, 시냅스야. 여기 있는 모두가 네가 죽기만을 기다릴 수도 있고."
+            </p>
         </div>
-        <div className="text-cyber-red font-mono text-xs flex items-center gap-2">
+        <div className="text-cyber-red font-mono text-xs flex items-center gap-2 shrink-0">
             <Wifi size={14} /> ENCRYPTED CONNECTION
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div className="grid grid-cols-1 gap-8">
          {/* Main Definition Card */}
          <div className="bg-[#1a0505] border border-cyber-red p-8 relative overflow-hidden group hover:shadow-[0_0_30px_rgba(255,0,60,0.2)] transition-shadow">
             <div className="absolute top-0 right-0 p-4 opacity-10">
@@ -160,27 +165,6 @@ export const Synapse: React.FC = () => {
                 // TRAFFIC: HIGH // CONTENT: GORE // STATUS: UNMODERATED
             </div>
          </div>
-
-         {/* GABA Definition Card */}
-         <div className="bg-[#1a0505] border border-cyber-red p-8 relative overflow-hidden group hover:shadow-[0_0_30px_rgba(255,0,60,0.2)] transition-shadow">
-            <div className="absolute top-0 right-0 p-4 opacity-10">
-                <Syringe size={120} className="text-cyber-red" />
-            </div>
-            
-            <h3 className="text-3xl font-display font-bold text-white mb-2 flex items-center gap-3">
-                <span className="text-cyber-red">#</span> GABA
-            </h3>
-            <div className="w-16 h-1 bg-cyber-red mb-6"></div>
-            
-            <p className="font-mono text-gray-300 text-lg leading-relaxed mb-4">
-                사이버웨어나 시술을 담당하는 직업을 칭하는 단어. 이해하기 힘든 단어들을 읊조리기도 한다. '가바' 라고도 불리고, '가바닥'이라고도 불린다.
-            </p>
-            
-            <ul className="mt-6 space-y-2 font-mono text-sm text-gray-400">
-                <li className="flex items-center gap-2"><span className="text-cyber-red">{'>'}</span> Alias: Flesh-Mechanic</li>
-                <li className="flex items-center gap-2"><span className="text-cyber-red">{'>'}</span> Alias: Chip-Surgeon</li>
-            </ul>
-         </div>
       </div>
 
       {/* Simulated Chat Feed */}
@@ -191,7 +175,7 @@ export const Synapse: React.FC = () => {
         </h4>
         
         {/* Scrollable Container */}
-        <div className="font-mono text-sm max-w-3xl h-96 overflow-y-auto pr-2 space-y-2 border-b border-gray-800 pb-2">
+        <div className="font-mono text-sm w-full h-96 overflow-y-auto pr-2 space-y-2 border-b border-gray-800 pb-2">
             {messages.map((msg) => (
                 <div 
                     key={msg.id}

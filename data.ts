@@ -1,4 +1,4 @@
-import { Terminology, Association, Corporation, Character, Rank } from './types';
+import { Terminology, Association, Corporation, Character, Rank, Faction } from './types';
 
 export const terminologyData: Terminology[] = [
   // Locations
@@ -67,8 +67,20 @@ export const terminologyData: Terminology[] = [
   {
     term: "GABA",
     enTerm: "GABA",
-    description: "사이버웨어나 시술을 담당하는 직업을 칭하는 단어. 이해하기 힘든 단어들을 읊조리기도 한다. '가바' 라고도 불리고, '가바닥'이라고도 불린다.",
+    description: "그 고철(사이버웨어)이나 시술을 전문적으로 한다고 자부하는 직종들. 지들 세계에 빠져서는 이해 못할 말이나 중얼거려. 보통 '가바' 아니면 '가바닥'이라고 부르는데, 쟤네한테 시술 받을 바에는 차라리 협회를 믿어. 이건 진짜야.",
     category: 'entity'
+  },
+  {
+    term: "해마",
+    enTerm: "Hippocampus",
+    description: "이 바런트럼의 인터넷에서 정보란 정보는 다 캐고 다니는 놈들. 가끔 겁없이 기업 정보를 건드렸다가 흔적도 없이 사라지는 놈들도 있어.",
+    category: 'entity'
+  },
+  {
+    term: "편도체",
+    enTerm: "Amygdala",
+    description: "'해마'들이 사용하는 전용 망. 가장 중요한 정보들이 움직인다. 정보가 제일 많이 지나다니는 통로. 사실 그냥 할거 없는 개백수들이 있는 곳이기도 해.(난 백수 아니야.)",
+    category: 'concept'
   },
 
   // Concepts
@@ -223,6 +235,59 @@ export const corporationData: Corporation[] = [
     motto: "육체는 의지를 담는 그릇.",
     description: "인지혼이랑 짝짜꿍해서 비싼 전신 의체 만들어. 돈만 있으면 신이 된 기분이겠지.",
     products: ["고성능 인공 육체"]
+  }
+];
+
+export const factionData: Faction[] = [
+  // Upper Layer
+  {
+    name: "나이팅게일",
+    enName: "Nightingale",
+    description: "상층에 위치한 군수 기업. 주로 '미드나이트', '트와일라잇' 등의 하청 기업을 거느리고 있다.",
+    layer: "Upper",
+    type: "Military Corp",
+    traits: ["저격 및 암살 특화", "하청 기업 보유 (Midnight, Twilight)"]
+  },
+  {
+    name: "코르사코프",
+    enName: "Korsakoff",
+    description: "상층 군수 기업. '베르니케', '티아민' 등의 하청 기업을 보유 중이다.",
+    layer: "Upper",
+    type: "Military Corp",
+    traits: ["근접 무기 제작 특화", "하청 기업 보유 (Wernicke, Thiamine)"]
+  },
+  {
+    name: "타즈마",
+    enName: "Tazma",
+    description: "다른 기업의 설계도를 카피해 양산하는 군수 기업. 상층에선 '짝퉁' 취급 받지만, 하층에선 가성비로 평가가 좋다.",
+    layer: "Upper",
+    type: "Military Corp (Copycat)",
+    traits: ["설계도 복제 및 양산", "상층 내 평판 저조", "하층 내 높은 점유율"]
+  },
+  // Lower Layer
+  {
+    name: "밤의 이빨",
+    enName: "Night's Teeth",
+    description: "단검과 기업 '미드나이트'의 소음기 권총을 주력으로 사용하는 갱단. APD보다 싼 값에 더러운 일을 처리해준다.",
+    layer: "Lower",
+    type: "Gang / Mercenaries",
+    traits: ["주무장: 단검, 소음기 권총", "저렴한 의뢰비"]
+  },
+  {
+    name: "랑아",
+    enName: "Wolf's Fang",
+    description: "기업 '울프강'의 하청기업 성격을 띤 조직. 톱날검을 주력으로 사용하며 잔혹하기로 유명하다.",
+    layer: "Lower",
+    type: "Corporate Subcontractor / Gang",
+    traits: ["주무장: 톱날검(Saw-blade Sword)", "울프강(Wolfgang) 하청"]
+  },
+  {
+    name: "마운티 벨트",
+    enName: "Mountain Belt",
+    description: "공사장에서 사용하던 장비들을 주워 무기로 개조해 사용하는 집단. 점 조직 형태라 우두머리가 누군지도 모른다.",
+    layer: "Lower",
+    type: "Scavenger Group",
+    traits: ["개조 공사 장비 사용", "점 조직 (Cell Organization)", "상징: 노란색/검은색"]
   }
 ];
 

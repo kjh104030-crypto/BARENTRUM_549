@@ -30,6 +30,15 @@ export interface Corporation {
   products: string[];
 }
 
+export interface Faction {
+  name: string;
+  enName: string;
+  description: string;
+  layer: 'Upper' | 'Lower'; // 상층 vs 하층
+  type: string; // e.g. "Military Corp", "Gang"
+  traits: string[]; // Key characteristics or weapons
+}
+
 export interface Character {
   name: string;
   traits: string;
