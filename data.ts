@@ -107,48 +107,56 @@ export const rankData: Rank[] = [
     term: "자아 초월",
     enTerm: "Self-Transcendence",
     description: "꿈 깨. 그냥 간판이야. 도달 불가능.",
+    comparison: "도시 전설, 신화적 존재, 시스템의 신",
     level: 1
   },
   {
     term: "자아실현",
     enTerm: "Self-Actualization",
     description: "네가 올라갈 수 있는 끝. 기업 따까리 BPD 대장급이랑 맞먹지.",
+    comparison: "대기업 임원, 소규모 군벌 지도자, BPD 대장",
     level: 2
   },
   {
     term: "탐미",
     enTerm: "Aestheticism",
     description: "기업 놈들이 돈 싸들고 모셔가려는 등급.",
+    comparison: "S급 용병, 기업 정예 요원, 유명인사",
     level: 3
   },
   {
     term: "인지",
     enTerm: "Cognition",
     description: "이제 좀 기업이나 BPD 제의가 들어오는군. 사무소 하나 차릴 정도는 돼.",
+    comparison: "베테랑 해결사, 사무소 소장, 공방 주인",
     level: 4
   },
   {
     term: "존중",
     enTerm: "Respect",
     description: "상층 구경 좀 해볼 만한 등급. 이때부턴 익명성은 개나 줘버려.",
+    comparison: "숙련된 청부업자, 전문 기술자",
     level: 5
   },
   {
     term: "소속",
     enTerm: "Affiliation",
     description: "그나마 사람 구실 하는 평균 상위권. 보험이니 뭐니 혜택 좀 챙겨주지.",
+    comparison: "일반 시민권자, 기업 말단 직원, 경비원",
     level: 6
   },
   {
     term: "안전",
     enTerm: "Safety",
     description: "일반인이랑 다를 거 없는 하루살이들. 그나마 고철이라도 박았으면 상위 20%라네.",
+    comparison: "빈민가 갱단 말단, 일용직 노동자",
     level: 7
   },
   {
     term: "본능",
     enTerm: "Instinct",
     description: "종양이나 찌꺼기랑 동급. 밑바닥 인생.",
+    comparison: "하수구 쥐, 실험체, 고기방패, 찌꺼기",
     level: 8
   }
 ];

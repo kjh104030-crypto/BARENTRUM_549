@@ -11,6 +11,7 @@ export interface Rank {
   term: string;
   enTerm: string;
   description: string;
+  comparison: string; // New field for simple comparison/analogy
   level: number; // 1 is highest (Self-Transcendence), 8 is lowest (Instinct)
 }
 

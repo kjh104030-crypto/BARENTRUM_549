@@ -1,6 +1,6 @@
 import React from 'react';
 import { rankData, promotionInfo } from '../data';
-import { Award, TrendingUp, ChevronUp } from 'lucide-react';
+import { Award, TrendingUp, ChevronUp, Scale } from 'lucide-react';
 
 export const Ranks: React.FC = () => {
   return (
@@ -36,7 +36,7 @@ export const Ranks: React.FC = () => {
          <div className="hidden md:flex text-xs font-mono text-gray-500 border-b border-gray-800 pb-2 px-6 uppercase tracking-widest">
             <div className="w-24">Level</div>
             <div className="w-48">Rank Name</div>
-            <div className="flex-1">Description</div>
+            <div className="flex-1">Description / Comparison</div>
          </div>
 
         {rankData.map((rank) => (
@@ -70,10 +70,21 @@ export const Ranks: React.FC = () => {
             </div>
 
             {/* Rank Description */}
-            <div className="flex-1">
-                <p className="font-body text-gray-300 text-sm md:text-base border-l-2 border-gray-800 pl-4">
+            <div className="flex-1 w-full">
+                <p className="font-body text-gray-300 text-sm md:text-base border-l-2 border-gray-800 pl-4 mb-3">
                     {rank.description}
                 </p>
+                
+                {/* Comparison Badge */}
+                <div className="flex items-center gap-2 md:ml-4">
+                    <Scale size={14} className="text-cyber-yellow shrink-0" />
+                    <div className="text-xs font-mono text-gray-400">
+                        <span className="text-cyber-yellow uppercase mr-2 tracking-wider">Equivalent To:</span>
+                        <span className="text-white bg-gray-900 px-2 py-0.5 rounded border border-gray-700">
+                            {rank.comparison}
+                        </span>
+                    </div>
+                </div>
             </div>
 
             {/* Visual Indicator of 'Higher' */}
