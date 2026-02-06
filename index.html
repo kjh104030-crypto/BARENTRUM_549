@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Barentrum Archive</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;600;700&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              cyber: {
+                yellow: '#FCEE0A',
+                blue: '#00F0FF',
+                red: '#FF003C',
+                black: '#0a0a0a',
+                dark: '#121212',
+                gray: '#2a2a2a',
+              }
+            },
+            fontFamily: {
+              display: ['Orbitron', 'sans-serif'],
+              body: ['Rajdhani', 'Noto Sans KR', 'sans-serif'],
+              mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
+            },
+            animation: {
+              'glitch-1': 'glitch-anim-1 2.5s infinite linear alternate-reverse',
+              'glitch-2': 'glitch-anim-2 3s infinite linear alternate-reverse',
+              'scanline': 'scanline 8s linear infinite',
+            },
+            keyframes: {
+              'glitch-anim-1': {
+                '0%': { clipPath: 'inset(20% 0 80% 0)' },
+                '20%': { clipPath: 'inset(60% 0 10% 0)' },
+                '40%': { clipPath: 'inset(40% 0 50% 0)' },
+                '60%': { clipPath: 'inset(80% 0 5% 0)' },
+                '80%': { clipPath: 'inset(10% 0 70% 0)' },
+                '100%': { clipPath: 'inset(30% 0 20% 0)' },
+              },
+              'glitch-anim-2': {
+                '0%': { clipPath: 'inset(10% 0 60% 0)' },
+                '20%': { clipPath: 'inset(30% 0 10% 0)' },
+                '40%': { clipPath: 'inset(80% 0 5% 0)' },
+                '60%': { clipPath: 'inset(10% 0 85% 0)' },
+                '80%': { clipPath: 'inset(40% 0 30% 0)' },
+                '100%': { clipPath: 'inset(70% 0 5% 0)' },
+              },
+              'scanline': {
+                '0%': { transform: 'translateY(-100%)' },
+                '100%': { transform: 'translateY(100%)' }
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #050505;
+        color: #e0e0e0;
+        overflow-x: hidden;
+      }
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+        background: #111;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #FCEE0A;
+      }
+      .cyber-clip-path {
+        clip-path: polygon(
+          0 0, 
+          100% 0, 
+          100% calc(100% - 15px), 
+          calc(100% - 15px) 100%, 
+          0 100%
+        );
+      }
+      .cyber-glitch-effect::before,
+      .cyber-glitch-effect::after {
+        content: attr(data-text);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #0a0a0a;
+      }
+      .cyber-glitch-effect::before {
+        left: 2px;
+        text-shadow: -1px 0 #ff003c;
+        clip-path: inset(0 0 0 0);
+        animation: glitch-anim-1 2s infinite linear alternate-reverse;
+      }
+      .cyber-glitch-effect::after {
+        left: -2px;
+        text-shadow: -1px 0 #00f0ff;
+        clip-path: inset(0 0 0 0);
+        animation: glitch-anim-2 3s infinite linear alternate-reverse;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
