@@ -399,11 +399,11 @@ export const Amygdala: React.FC = () => {
 
                       <h3 className="text-xs font-bold text-green-600 mb-3 uppercase tracking-widest border-b border-green-900 pb-1">System Log</h3>
                       <div className="text-[10px] space-y-1 opacity-70 font-mono leading-tight">
-                          <div>> Decrypting packets... OK</div>
-                          <div>> Masking IP... OK</div>
-                          <div>> Bypassing Node 7... OK</div>
-                          <div className="text-red-500">> Warning: Trace attempt detected</div>
-                          <div>> Rerouting... OK</div>
+                          <div>&gt; Decrypting packets... OK</div>
+                          <div>&gt; Masking IP... OK</div>
+                          <div>&gt; Bypassing Node 7... OK</div>
+                          <div className="text-red-500">&gt; Warning: Trace attempt detected</div>
+                          <div>&gt; Rerouting... OK</div>
                       </div>
                   </div>
               </div>
